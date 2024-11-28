@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import PostComments from ".."; // Importo o componente
 
 describe("Teste para o componente PostComments", () => {
-    test("Deve adicionar dois comentários corretamente", () => {
+  test("Deve adicionar dois comentários corretamente", () => {
     render(<PostComments />);
 
     // Encontro o textarea para comentários
@@ -12,7 +12,7 @@ describe("Teste para o componente PostComments", () => {
 
     // Digitando o primeiro comentário
     fireEvent.change(commentTextarea, {
-        target: { value: "Primeiro comentário" },
+      target: { value: "Primeiro comentário" },
     });
 
     // Verifica se o texto foi digitado corretamente
@@ -29,7 +29,7 @@ describe("Teste para o componente PostComments", () => {
 
     // Digita agora o segundo comentário
     fireEvent.change(commentTextarea, {
-        target: { value: "Segundo comentário" },
+      target: { value: "Segundo comentário" },
     });
 
     // Verifica se o texto foi digitado corretamente
@@ -43,5 +43,5 @@ describe("Teste para o componente PostComments", () => {
 
     // Verifica se ambos os comentários estão presentes
     expect(screen.getAllByTestId("post-comment")).toHaveLength(2);
-    });
+  });
 });
